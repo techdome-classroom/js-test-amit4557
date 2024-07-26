@@ -32,8 +32,22 @@ const getTotalIsles = function (grid) {
   return countIslands();
 };
 
+// Example usage
 const dispatch1 = [
   ["L", "L", "L", "L", "W"],
   ["L", "L", "W", "L", "W"],
   ["L", "L", "W", "W", "W"],
-  ["W", "W", "W"],
+  ["W", "W", "W", "W", "W"]
+];
+
+const dispatch2 = [
+  ["L", "L", "W", "W", "W"],
+  ["L", "L", "W", "W", "W"],
+  ["W", "W", "L", "W", "W"],
+  ["W", "W", "W", "L", "L"]
+];
+
+console.log(getTotalIsles(dispatch1)); // Output: 1
+console.log(getTotalIsles(dispatch2)); // Output: 3
+
+module.exports = getTotalIsles;
