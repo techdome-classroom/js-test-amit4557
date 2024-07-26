@@ -1,20 +1,15 @@
 const getTotalIsles = function (grid) {
-  // Function to perform DFS and mark connected land as visited
   function dfs(r, c) {
-    // Base cases for recursion
     if (r < 0 || r >= grid.length || c < 0 || c >= grid[0].length || grid[r][c] === 'W') {
       return;
     }
-    // Mark the current cell as visited
     grid[r][c] = 'W';
-    // Explore all four directions
-    dfs(r + 1, c); // Down
-    dfs(r - 1, c); // Up
-    dfs(r, c + 1); // Right
-    dfs(r, c - 1); // Left
+    dfs(r + 1, c);
+    dfs(r - 1, c);
+    dfs(r, c + 1);
+    dfs(r, c - 1);
   }
 
-  // Function to count the number of islands
   function countIslands() {
     if (!grid || grid.length === 0) return 0;
 
@@ -37,22 +32,8 @@ const getTotalIsles = function (grid) {
   return countIslands();
 };
 
-// Example usage
 const dispatch1 = [
   ["L", "L", "L", "L", "W"],
   ["L", "L", "W", "L", "W"],
   ["L", "L", "W", "W", "W"],
-  ["W", "W", "W", "W", "W"],
-];
-
-const dispatch2 = [
-  ["L", "L", "W", "W", "W"],
-  ["L", "L", "W", "W", "W"],
-  ["W", "W", "L", "W", "W"],
-  ["W", "W", "W", "L", "L"],
-];
-
-console.log(getTotalIsles(dispatch1)); // Output: 1
-console.log(getTotalIsles(dispatch2)); // Output: 3
-
-module.exports = getTotalIsles;
+  ["W", "W", "W",
