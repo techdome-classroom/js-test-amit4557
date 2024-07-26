@@ -32,7 +32,6 @@ const getTotalIsles = function (grid) {
   return countIslands();
 };
 
-// Example usage
 const dispatch1 = [
   ["L", "L", "L", "L", "W"],
   ["L", "L", "W", "L", "W"],
